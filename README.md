@@ -1,5 +1,6 @@
 # Credit_Card-Dataset
-Analyze the credit card customers dataset and develop a K-Means model for customer segmentation.
-important features of the segments was identified, and use the elbow and silhouette methods to
-determine the optimal number of clusters. The results of this analysis should help define marketing
-strategies.
+The PySpark code performs clustering and classification on a credit card dataset. After reading in the dataset, it conducts exploratory data analysis (EDA) and drops missing data. It then scales and assembles the features, applies KMeans for clustering, and subsequently uses decision tree and random forest classifiers to predict the cluster for each observation. The code evaluates the performance of the classifiers, displaying feature importance for the random forest model using binary and multiclass classification evaluation.
+
+The K-means clustering process on the credit card dataset starts with selecting columns with high importance scores from a Random Forest model. The code then creates a pipeline that scales the features and clusters the data using K-means with k=2. It calculates the within-cluster sum of squares error (WSSE) and silhouette score, and displays the cluster centers. The clustering process is repeated for k=2 to k=10, and the elbow curve and silhouette curve are plotted to identify the optimal k value.
+
+Next, the code repeats the clustering process with k=3 and displays the cluster centers and the number of customers in each cluster. To replace missing values in the CREDIT_LIMIT and MINIMUM_PAYMENTS columns, it uses the mean value. The code selects the same columns as before and repeats the clustering process to evaluate the WSSE and silhouette score for k=2 to k=10.
